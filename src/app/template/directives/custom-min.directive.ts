@@ -19,7 +19,6 @@ export class CustomMinDirective implements Validator {
   }
   validate(control: FormControl): ValidationErrors | null {
     const inputValue = control.value;
-    console.log('directive validate', inputValue);
     return (inputValue < this.minimun) ? {'customMin':true} : null;
   }
 
