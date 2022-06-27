@@ -68,6 +68,6 @@
         <span>Value</span>
         <pre>{{myForm.value | json}}</pre>
         <span>CustomDirective</span>
-        <pre>{{myForm.controls['existences'].errors| json}}</pre>
+        <pre>{{myForm.controls['existences']?.errors | json}}</pre>
     </div>
 </div>
