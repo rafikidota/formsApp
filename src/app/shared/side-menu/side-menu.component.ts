@@ -3,7 +3,14 @@ import { MenuItem } from '../interfaces/MenuItem.interface';
 
 @Component({
   selector: 'app-side-menu',
-  templateUrl: './side-menu.component.html'
+  templateUrl: './side-menu.component.html',
+  styles: [
+    `
+    li{
+      cursor:pointer;
+    }
+    `
+  ]
 })
 export class SideMenuComponent implements OnInit {
 

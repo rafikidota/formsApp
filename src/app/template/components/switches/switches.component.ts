@@ -8,7 +8,12 @@ export class SwitchesComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+
+  person = {
+    genre: '',
+    notifications: false,
   }
+  terms: boolean = false;
 
 }
