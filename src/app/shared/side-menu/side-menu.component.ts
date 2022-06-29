@@ -43,6 +43,16 @@ export class SideMenuComponent implements OnInit {
       route: './reactive/switches'
     }
   ];
+  authMenu: MenuItem[] = [
+    {
+      text: 'Registro',
+      route: './auth/register'
+    },
+    {
+      text: 'Login',
+      route: './auth/login'
+    }
+  ];
 
 
 }
