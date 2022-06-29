@@ -1,1 +1,92 @@
-<p>switches works!</p>
+<h2>Template: Switches</h2>
+<hr>
+
+<form [formGroup]="myForm" (submit)="save()">
+    
+    <!-- Radios -->
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Genero</label>
+        <div class="col-sm-9">
+            <div class="form-check">
+                <input class="form-check-input" 
+                       type="radio"
+                       value="M"
+                       formControlName="genre"                        
+                       id="radioMale">
+                       <label class="form-check-label" for="radioMale">
+                           Masculino
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" 
+                        type="radio"
+                        formControlName="genre"                        
+                        value="F"                         
+                        id="radioFemale">
+                <label class="form-check-label" for="radioFemale">
+                  Femenino
+                </label>
+              </div>
+        </div>
+    </div>
+
+    <!-- Switches -->
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Notificaciones</label>
+        <div class="col-sm-9">
+            <div class="form-check form-switch mt-2">
+                <input class="form-check-input" 
+                       type="checkbox" 
+                       role="switch"
+                       formControlName="notifications"
+                       id="notifications">
+                <label class="form-check-label" for="notifications">Quiero recibir notificaciones</label>
+              </div>              
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-9">
+            <div class="form-check">
+                <input class="form-check-input" 
+                       type="checkbox"
+                       formControlName="terms"                                             
+                       id="terms">
+                <label class="form-check-label" for="terms">
+                  Términos y condiciones de uso
+                </label>
+              </div>
+              
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="col">
+            <button type="submit" 
+                    class="btn btn-primary float-end"  
+                     [disabled]="myForm.invalid">
+                Guardar
+            </button>
+        </div>
+    </div>
+
+    
+</form>
+
+<h5>My Form</h5>
+<pre>{{myForm.value | json}}</pre>
+<br>
+
+<h5>Person</h5>
+<pre>{{person | json}}</pre>
+<br>
+
+<h5>Valido</h5>
+<pre>{{myForm.valid}}</pre>
+
+<!-- <h5>Terminos</h5>
+<pre> {{myForm.controls['terms']?.errors | json}}</pre>
+
+<br>
+<h5>Condiciones:</h5> -->

@@ -1,1 +1,67 @@
-<p>dinamics works!</p>
+<h2>Template: <small>Dinámicos</small></h2>
+<hr>
+<form (ngSubmit)="save()" [formGroup]="myForm" autocomplete="off">
+    <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Nombre</label>
+        <div class="col-sm-9">
+            <input type="text" 
+                   class="form-control" 
+                   formControlName="name" 
+                   placeholder="Nombre de la persona">
+            <span class="form-text text-danger"
+                  *ngIf="validate('name')">
+                Este campo es obligatorio
+            </span>
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Agregar</label>
+        <div class="col-sm-9">
+
+            <div class="input-group">
+                <input type="text" 
+                       class="form-control"
+                       [formControl]="newFav" 
+                       placeholder="Agregar favorito" 
+                       (keyup.enter)="add()">
+                <button class="btn btn-outline-primary" type="button" (click)="add()">Agregar</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Favoritos</label>
+        <div class="col-sm-9" formArrayName="favorites">
+            <div class="input-group mb-1"
+                 *ngFor="let fav of favorites; let i = index ">
+                <input class="form-control" [formControlName]="i">
+                <button class="btn btn-outline-danger" 
+                        type="button"
+                        (click)="delete(i)">
+                        Eliminar
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <div class="col-sm-12">
+            <button type="submit" class="btn btn-primary float-end" [disabled]="myForm.invalid" (click)="save()">
+                Guardar
+            </button>
+        </div>
+    </div>
+</form>
+
+<span>Valid</span>
+<pre>{{myForm.valid}}</pre>
+<br>
+<span>Value</span>
+<pre>{{myForm.value | json}}</pre>
+<br>
+<span>Agregar Fav</span>
+<pre>{{newFav.valid}}</pre>
+<pre>{{newFav.value}}</pre>
