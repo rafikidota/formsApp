@@ -53,6 +53,12 @@ export class SideMenuComponent implements OnInit {
       route: './auth/login'
     }
   ];
+  selectorMenu: MenuItem[] = [
+    {
+      text: 'Selector',
+      route: './selector'
+    }
+  ];
 
 
 }
