@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   localhostURL: 'http://localhost:3000/usuarios',
-  restCountriesApiURL:'http://restcountries.com/'
+  restCountriesApiURL:'https://restcountries.com/v3.1'
 };
 
 /*
