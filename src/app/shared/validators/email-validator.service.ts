@@ -3,13 +3,14 @@ import { Injectable } from '@angular/core';
 import { AbstractControl, AsyncValidator, ValidationErrors } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map,delay } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmailValidatorService implements AsyncValidator {
 
-  baseUrl: string = 'http://localhost:3000/usuarios';
+  baseUrl: string = environment.localhostURL;
 
   constructor(private http: HttpClient) { }
   
